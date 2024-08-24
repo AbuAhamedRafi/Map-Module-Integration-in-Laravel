@@ -22,7 +22,7 @@ class CountryController extends Controller
 
         // dd($chartData);
 
-        return view('portfolio', ['chartData' => ($chartData)]);
+        return view('country', ['chartData' => ($chartData)]);
     }
 
     /**
@@ -30,7 +30,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -38,8 +38,10 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//
     }
+    
+    
 
     /**
      * Display the specified resource.
