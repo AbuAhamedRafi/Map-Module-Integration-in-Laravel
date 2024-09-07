@@ -13,16 +13,15 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $data = DB::table('countries')->select('country', 'popularity')->get();
+        // Fetch data using the Country model
+        $countries = Country::select('country', 'popularity','populations','students')->get();
 
         $chartData = [];
-        foreach ($data as $row) {
-            $chartData[] = [$row->country, (float)$row->popularity];
+        foreach ($countries as $country) {
+            $chartData[] = [$country->country, (float)$country->popularity, (int)$country->populations, (int)$country->students];
         }
 
-        // dd($chartData);
-
-        return view('country', ['chartData' => ($chartData)]);
+        return view('country', ['chartData' => $chartData]);
     }
 
     /**
@@ -30,7 +29,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-       //
+       return view('add_country');
     }
 
     /**
@@ -38,11 +37,23 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-//
+        // Validate the incoming data
+        $request->validate([
+            'country' => 'required|string',
+            'popularity' => 'required|integer',
+            'populations' => 'required|integer', // Consistent name with the form and migration
+            'students' => 'required|integer',
+        ]);
+        
+
+        // Store the data using the Country model
+        Country::create($request->only(['country', 'popularity', 'populations', 'students']));
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Added successfully!');
     }
     
     
-
     /**
      * Display the specified resource.
      */

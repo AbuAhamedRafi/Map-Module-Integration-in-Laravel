@@ -22,20 +22,30 @@
     <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
         <h1 class="text-2xl font-bold text-center mb-6 text-blue-600">Add a New Country</h1>
 
-        <form action="" method="POST" class="space-y-4">
+        <form action="{{ route('country.store') }}" method="POST" class="space-y-4">
             @csrf
             <div>
                 <label for="country" class="block text-gray-700 font-medium">Country:</label>
                 <input type="text" id="country" name="country" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
             </div>
-
+        
             <div>
                 <label for="popularity" class="block text-gray-700 font-medium">Popularity:</label>
                 <input type="number" id="popularity" name="popularity" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
             </div>
+            <div>
+                <label for="populations" class="block text-gray-700 font-medium">Population:</label>
+<input type="number" id="populations" name="populations" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
 
-            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Create</button>
+            </div>
+            <div>
+                <label for="students" class="block text-gray-700 font-medium">Students:</label>
+                <input type="number" id="students" name="students" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+        
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700">Create</button>
         </form>
+        
     </div>
 
     <!-- Footer -->

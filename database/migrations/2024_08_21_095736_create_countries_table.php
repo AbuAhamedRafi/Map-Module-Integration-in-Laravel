@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('country');
             $table->integer('popularity');
+            $table->integer('populations');
+            $table->integer('students');
+            $table->timestamps();
         });
     }
 

@@ -17,7 +17,7 @@
             <a href="/" class="text-white text-xl font-bold">Map Module</a>
             <div>
                 <a href="{{ route('country.index') }}" class="text-white hover:text-gray-200 mx-2">Home</a>
-                <a href="{{route('country.create')}}" class="text-white hover:text-gray-200 mx-2">Add Country</a>
+                <a href="{{ route('country.create') }}" class="text-white hover:text-gray-200 mx-2">Add Country</a>
             </div>
         </div>
     </nav>
@@ -28,23 +28,8 @@
         <p class="text-center text-gray-700">Try this in your own website</p>
     </section>
 
-    <!-- Features Section -->
-    {{-- <section class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-            <h2 class="text-xl font-bold text-blue-600">Projects</h2>
-            <p class="mt-4 text-gray-700">Take a look at some of my latest work.</p>
-        </div>
-        <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-            <h2 class="text-xl font-bold text-blue-600">Skills</h2>
-            <p class="mt-4 text-gray-700">Discover the tools and technologies I excel in.</p>
-        </div>
-        <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-            <h2 class="text-xl font-bold text-blue-600">Contact</h2>
-            <p class="mt-4 text-gray-700">Let's work together! Reach out to me for collaboration.</p>
-        </div>
-    </section> --}}
-    
-    <section class="container mx-auto mt-10 flex justify-center items-center"> 
+
+    <section class="container mx-auto mt-10 flex justify-center items-center">
         <div id="regions_div" style="width: 900px; height: 500px;"></div>
     </section>
     <script>
